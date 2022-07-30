@@ -1,0 +1,24 @@
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - main: ./cmd/render
+    ldflags:
+      - -X main.version={{.Version}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+checksum:
+  name_template: "checksums.txt"
+brews:
+  - tap:
+      owner: winebarrel
+      name: homebrew-render
+    homepage: https://github.com/winebarrel/render
+    description: Rendering files using Sigil templating.
+    license: MIT
+    install: |
+      bin.install 'render'

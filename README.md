@@ -21,3 +21,8 @@ London Bridge is broken down
 * [template package - text/template - Go Packages](https://pkg.go.dev/text/template)
 * https://github.com/progrium/entrykit#render---template-rendering
 
+# Installation
+
+```
+brew install winebarrel/kasa/kasa
+```
