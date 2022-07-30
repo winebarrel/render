@@ -28,10 +28,13 @@ London Bridge is broken down
 * [template package - text/template - Go Packages](https://pkg.go.dev/text/template)
 * https://github.com/progrium/entrykit#render---template-rendering
 
-# Installation
+## Installation
+
+See https://github.com/winebarrel/render/releases/latest
+
+### Homebrew
 
 ```
 brew install winebarrel/render/render
 ```
 
-See https://github.com/winebarrel/render/releases/latest
