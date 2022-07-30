@@ -2,7 +2,6 @@ package render
 
 import (
 	"io/ioutil"
-	"os"
 	"path/filepath"
 
 	"github.com/gliderlabs/sigil"
@@ -27,8 +26,7 @@ func Render(target string) error {
 		return err
 	}
 
-	info, _ := os.Stat(tmpl)
-	err = ioutil.WriteFile(target, buf.Bytes(), info.Mode())
+	err = ioutil.WriteFile(target, buf.Bytes(), 0644)
 
 	return err
 }

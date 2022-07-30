@@ -10,6 +10,10 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestMain(m *testing.M) {
+	os.Unsetenv("WHAT_HAPPEN")
+	os.Exit(m.Run())
+}
 func TestRender(t *testing.T) {
 	assert := assert.New(t)
 
@@ -27,6 +31,9 @@ func TestRender(t *testing.T) {
 	conf, err := ioutil.ReadFile(confPath)
 	assert.NoError(err)
 	assert.Equal("London Bridge is broken down", string(conf))
+	info, err := os.Stat(confPath)
+	assert.NoError(err)
+	assert.Equal("-rw-r--r--", info.Mode().String())
 }
 
 func TestRenderWithEnv(t *testing.T) {
@@ -39,7 +46,7 @@ func TestRenderWithEnv(t *testing.T) {
 	tmplPath := filepath.Join(dir, "test.conf.tmpl")
 	confPath := strings.TrimSuffix(tmplPath, ".tmpl")
 	tmpl := `London Bridge is {{ var "WHAT_HAPPEN" | default "broken down" }}`
-	ioutil.WriteFile(tmplPath, []byte(tmpl), 0644)
+	ioutil.WriteFile(tmplPath, []byte(tmpl), 0600)
 
 	err := Render(confPath)
 
@@ -47,6 +54,9 @@ func TestRenderWithEnv(t *testing.T) {
 	conf, err := ioutil.ReadFile(confPath)
 	assert.NoError(err)
 	assert.Equal("London Bridge is falling down", string(conf))
+	info, err := os.Stat(confPath)
+	assert.NoError(err)
+	assert.Equal("-rw-r--r--", info.Mode().String())
 }
 
 func TestRenderWithoutTmpl(t *testing.T) {
