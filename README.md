@@ -33,3 +33,5 @@ London Bridge is broken down
 ```
 brew install winebarrel/render/render
 ```
+
+See https://github.com/winebarrel/render/releases/latest
