@@ -6,6 +6,8 @@ Rendering files using [Sigil](https://github.com/gliderlabs/sigil) templating.
 
 It works similarly to [Entrykit](https://github.com/progrium/entrykit)'s render command.
 
+**NOTE: If you are considering using this tool, you should consider using Sigil directly.**
+
 ## Usage
 
 ```
