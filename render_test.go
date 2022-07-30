@@ -48,3 +48,9 @@ func TestRenderWithEnv(t *testing.T) {
 	assert.NoError(err)
 	assert.Equal("London Bridge is falling down", string(conf))
 }
+
+func TestRenderWithoutTmpl(t *testing.T) {
+	assert := assert.New(t)
+	err := Render("/no/such/file")
+	assert.EqualError(err, "open /no/such/file.tmpl: no such file or directory")
+}
