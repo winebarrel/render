@@ -20,6 +20,11 @@ $ echo 'London Bridge is {{ var "WHAT_HAPPEN" | default "broken down" }}' > test
 $ render test.conf
 $ cat test.conf
 London Bridge is broken down
+
+$ export WHAT_HAPPEN='falling down'
+$ render test.conf
+$ cat test.conf
+London Bridge is falling down
 ```
 
 ## Related Links
