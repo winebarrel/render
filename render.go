@@ -4,7 +4,6 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
-	"strings"
 
 	"github.com/gliderlabs/sigil"
 	_ "github.com/gliderlabs/sigil/builtin"
@@ -22,8 +21,7 @@ func Render(target string) error {
 		return err
 	}
 
-	name := strings.TrimSuffix(target, filepath.Ext(target))
-	buf, err := sigil.Execute(input, nil, name)
+	buf, err := sigil.Execute(input, nil, filepath.Base(target))
 
 	if err != nil {
 		return err
