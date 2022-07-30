@@ -22,3 +22,14 @@ brews:
     license: MIT
     install: |
       bin.install 'render'
+nfpms:
+  - id: render-nfpms
+    file_name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Arch }}"
+    homepage: https://github.com/winebarrel/render
+    maintainer: Genki Sugawara <sugawara@winebarrel.jp>
+    description: Rendering files using Sigil templating.
+    license: MIT
+    formats:
+      - deb
+      - rpm
+    bindir: /usr/bin
