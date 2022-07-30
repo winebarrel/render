@@ -1,5 +1,7 @@
 # render
 
+[![test](https://github.com/winebarrel/render/actions/workflows/test.yml/badge.svg)](https://github.com/winebarrel/render/actions/workflows/test.yml)
+
 Rendering files using [Sigil](https://github.com/gliderlabs/sigil) templating.
 
 It works similarly to [Entrykit](https://github.com/progrium/entrykit)'s render command.
