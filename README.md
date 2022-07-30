@@ -24,5 +24,5 @@ London Bridge is broken down
 # Installation
 
 ```
-brew install winebarrel/kasa/kasa
+brew install winebarrel/render/render
 ```
