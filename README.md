@@ -9,6 +9,13 @@ It works similarly to [Entrykit](https://github.com/progrium/entrykit)'s render 
 ## Usage
 
 ```
+$ render -h
+Usage: render [OPTION] FILE...
+  -version
+    	print version and exit
+```
+
+```
 $ echo 'London Bridge is {{ var "WHAT_HAPPEN" | default "broken down" }}' > test.conf.tmpl
 $ render test.conf
 $ cat test.conf
