@@ -14,6 +14,7 @@ func TestMain(m *testing.M) {
 	os.Unsetenv("WHAT_HAPPEN")
 	os.Exit(m.Run())
 }
+
 func TestRender(t *testing.T) {
 	assert := assert.New(t)
 
